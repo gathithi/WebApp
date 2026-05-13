@@ -1,38 +1,100 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Contact Us</title>  
-    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+<link rel="stylesheet" href="css/style.css">
 </head>
-    <body>
-        <div class="toplinks">
+<body>
+<div class="toplinks">
+        <a href="./">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="projects.html">Our Projects</a>
+        <a href="products.html">Our Products</a>
+        <a href="contacts.html">Contact Us</a>
+        <div class="toplinks-right">
+            <a href="signup.html">Sign Up</a>
+            <a href="signin.html">Sign In</a>
+        </div>
+</div>
+<div class="banner">
+    <h1>Contact Us</h1>
+</div>
+<div class="row">
+    <div class="content">
+    <div class="form-container">
+    <h1>Contact Us</h1>
 
-            <a href="index.html">Home</a>
-            <a href="about.html">About Us</a>
-            <a href="contacts.html">Contact Us</a>
-            <a href="Help.html">Help</a>
-            <a href="Privacy.html">Privacy Policy</a>
-            <a href="Terms.html">Terms and Conditions</a>
-        </div>
-        <div class="banner">
-            <h1>Contact Us</h1>
-        </div>
-        <div class="row">
-            <div class="content">
-                <p>If you have any questions, suggestions, or would like to get in touch with us, please feel free to reach out through the following contact information:</p>
-    
-    <ul>
-        <li>Email: <a href="mailto:r34fanclub@gmail.com">r34fanclub@gmail.com</a></li>
-        <li>Phone: <a href="tel:+8178335256">+81 78335256</a></li>
-        <li>Address: 123 Skyline Street, Tokyo, Japan</li>
-    </ul>
-    
-    <p>We value your feedback and look forward to hearing from you!</p>
-            </div>
-        </div>
-        
-    <div class="footer">
-        &#169; 2026 Farai G. All rights reserved.
+    <label for="fullname">Full name:</label>
+    <input type="text" id="fullname" placeholder="Jane Doe" />
+
+    <label for="email">Email address:</label>
+    <input type="email" id="email" placeholder="jane@example.com" />
+
+    <label for="phone">Phone number:</label>
+    <input type="tel" id="phone" placeholder="+254 700 000 000" />
+
+    <label for="subject">Subject line:</label>
+    <input type="text" id="subject" placeholder="Enter subject" />
+
+    <label for="message">Message:</label>
+    <textarea id="message" placeholder="Write your message here..."></textarea>
+
+    <label>Send message:</label>
+    <button onclick="handleSubmit()">Send message</button>
+
+    <p id="feedback"></p>
+  </div>
+
+  <script>
+    function handleSubmit() {
+      const name = document.getElementById('fullname').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const subject = document.getElementById('subject').value.trim();
+      const message = document.getElementById('message').value.trim();
+      const fb = document.getElementById('feedback');
+
+      if (!name || !email || !phone || !subject || !message) {
+        fb.textContent = 'Please fill in all fields.';
+        fb.style.color = 'red';
+        return;
+      }
+
+      fb.textContent = 'Message sent successfully!';
+      fb.style.color = 'green';
+
+      document.getElementById('fullname').value = '';
+      document.getElementById('email').value = '';
+      document.getElementById('phone').value = '';
+      document.getElementById('subject').value = '';
+      document.getElementById('message').value = '';
+    }
+  </script>
+
+   </div>
+    <div class="sidebar">
+        <h2>Our Offices</h2>
+        <p>We have offices in multiple locations around the world. Please visit our website for more information on our office locations and hours of operation.</p>
+
+        <h3>Head Office</h3>
+        <p>123 Mada, Nairobi, Kenya</p>
+        <p>Phone: <a href="tel:+1234567890">+1 234 567 890</a></p>
+        <p>Email: <a href="mailto:headoffice@icse.com">headoffice@icse.com</a></p>
+        <h3>Mombasa Office</h3>
+        <p>456 Main Street, Mombasa, Kenya</p>
+        <p>Phone: <a href="tel:+1234567891">+1 234 567 891</a></p>
+        <p>Email: <a href="mailto:mombasa@icse.com">mombasa@icse.com</a></p>
+        <h3>Nakuru Office</h3>
+        <p>789 High Street, Nakuru, Kenya</p>
+        <p>Phone: <a href="tel:+1234567892">+1 234 567 892</a></p>
+        <p>Email: <a href="mailto:nakuru@icse.com">nakuru@icse.com</a></p>
+
     </div>
-    </body>
-
+</div>
+<div class="footer">
+    &#169; 2026 ICS E. All rights reserved.
+</div>
+</body>
 </html>
